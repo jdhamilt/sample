@@ -27,16 +27,6 @@ project(':acmeair-services') {
     }
 }
 
-project(':acmeair-services-wxs') {
-    dependencies {
-        compile project(':acmeair-common')
-        compile project(':acmeair-services')
-        compile 'com.ibm.websphere.objectgrid:objectgrid:8.6.0.2'
-    }
-}
-
-
-
 project(':acmeair-services-morphia') {
     dependencies {
         compile project(':acmeair-common')
@@ -69,7 +59,7 @@ project(':acmeair-webapp') {
            includeService = service
         } else {
            println "property service was not set. Using the default value of $includeService"
-           println "   To pick a specific service set the service property using the -P parameter, for example gradlew -Pservice=wxs build " 
+           println "   To pick a specific service set the service property using the -P parameter, for example gradlew -Pservice=wxs build "
         }
 
         if ("$includeService".equalsIgnoreCase("morphia") || "$includeService".equalsIgnoreCase("ALL")) {
@@ -77,7 +67,7 @@ project(':acmeair-webapp') {
            compile (project(':acmeair-services-morphia')) {
               transitive = false
            }
- 
+
            compile ('org.mongodb.morphia:morphia:0.110')  {
               transitive = false
            }
@@ -93,4 +83,3 @@ project(':acmeair-webapp') {
         providedRuntime 'javax:javaee-web-api:7.0'
     }
 }
-
