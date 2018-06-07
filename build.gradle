@@ -71,7 +71,7 @@ project(':acmeair-webapp') {
            compile ('org.mongodb.morphia:morphia:0.110')  {
               transitive = false
            }
-
+        }
 
         providedRuntime 'javax:javaee-web-api:7.0'
     }
